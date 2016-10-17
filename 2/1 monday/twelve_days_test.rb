@@ -1,16 +1,9 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require './twelve_days'
+require "minitest/autorun"
+require "minitest/pride"
+require "./twelve_days"
 
 class TwelveDaysTest < Minitest::Test
-
-  #This is not good practice, AND it forces you to do dumb things like test_c_
-  #  in the code.  However, it's easier to follow as you're learning if the
-  #  tests always run in the same order.
-  def self.test_order
-    :alpha
-  end
-
+  i_suck_and_my_tests_are_order_dependent!
   def test_a_verse_1
     assert_output("On the First day of Christmas, my true love sent to me\na Partridge in a Pear Tree.\n") do
       verse(1)
@@ -34,5 +27,4 @@ class TwelveDaysTest < Minitest::Test
       entire_song
     end
   end
-
 end
