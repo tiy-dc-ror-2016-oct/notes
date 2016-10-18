@@ -54,3 +54,23 @@ exit!
 !nil
 remark = "ZOMG THE %^*@\#$(*^ ZOMBIES ARE COMING!!11!!1!"
 exit
+require "./vehicle"
+ElectricCar.ancestors
+ls ElectricCar
+exit
+Class
+Class.ancestors
+exit
+ls Time
+Time.new
+Time.now
+class Dog
+end
+Dog
+Dog.new
+moose = Dog.new
+def moose.bark!
+  puts "Yip"
+end
+moose.bark!
+exit
