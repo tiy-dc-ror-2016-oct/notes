@@ -4,7 +4,6 @@ require "./plane"
 
 module Fleet
   def self.fire_the_missiles
-    
   end
 end
 
