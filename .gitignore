@@ -1,0 +1,6 @@
+.DS_Store
+projects
+hw
+*.sqlite3
+erl_crash.dump
+progress_reports.md
