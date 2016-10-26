@@ -26,6 +26,7 @@ class Cohort < ActiveRecord::Base
   end
 
   def students_to_pick_from=(students)
+    # Look where can take an array... maybe it translats to an 'in(1,2,3)' sql call
     Pick.where(ids: students.map {|student|})
   end
 
