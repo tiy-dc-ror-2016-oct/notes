@@ -83,3 +83,10 @@ Student.create(name: "Farimah")
 Student.all
 exit!
 exit
+require 'active_record'
+class Ben < ActiveRecord::Base; end
+Ben.methods
+new_methods = Ben.methods - Object.methods
+new_methods.size
+new_methods = Ben.new.methods - Object.methods
+exit
