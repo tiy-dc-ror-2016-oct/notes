@@ -1,6 +1,7 @@
 require 'httparty'
 require 'bundler/setup'
 require 'pry'
+require_relative 'wu_api'
 
 class Conditions < WuApi
 
