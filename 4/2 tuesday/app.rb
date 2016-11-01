@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'sinatra'
+require 'sinatra/base'
 require 'pry'
 require './bmangelsen-weather-conditions-report/conditions'
 
@@ -37,5 +37,5 @@ class App < Sinatra::Base
   def speak(msg, voice)
     `say -v #{voice} #{msg}`
   end
-
+  run! if __FILE__ == $PROGRAM_NAME
 end
