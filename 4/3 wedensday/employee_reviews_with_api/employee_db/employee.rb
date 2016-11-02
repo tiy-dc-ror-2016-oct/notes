@@ -3,7 +3,7 @@ require 'active_record'
 class Employee < ActiveRecord::Base
   belongs_to :department
 
-  # validates :name, presence: true #uniqueness: true
+  validates :name, presence: true #uniqueness: true
   # validates :email, presence: true
 
   def add_employee_review(input)
