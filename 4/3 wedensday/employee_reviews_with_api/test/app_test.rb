@@ -11,6 +11,9 @@ class AppTest < Minitest::Test
     begin CompanyDataMigration.migrate(:down);
     rescue; end
     CompanyDataMigration.migrate(:up)
+    Employee.create!(name: "Dis Gal")
+    Employee.create!(name: "Dat Gal")
+    Employee.create!(name: "Dis Guy")
   end
 
   def test_can_create_employee
@@ -27,6 +30,14 @@ class AppTest < Minitest::Test
     assert last_response.ok?
     assert_equal Employee.last.id, JSON.parse(last_response.body)["id"]
     assert_equal "Ben", Employee.last.name
+  end
+
+  def test_can_read_all_employees
+    get "/employees"
+    assert last_response.ok?
+    employees = JSON.parse(last_response.body)
+    assert_equal 3, employees.size
+    assert_equal "Dis Gal", employees.first["name"]
   end
 
 end

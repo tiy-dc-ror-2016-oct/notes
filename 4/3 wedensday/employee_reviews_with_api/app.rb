@@ -9,6 +9,11 @@ class App < Sinatra::Base
     Employee.create!(employee_info).to_json
   end
 
+  get "/employees" do
+    content_type("application/json")
+    Employee.all.to_json
+  end
+
 
 
   run! if app_file == $PROGRAM_NAME
