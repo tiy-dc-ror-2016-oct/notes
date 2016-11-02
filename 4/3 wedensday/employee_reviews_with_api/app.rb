@@ -2,7 +2,7 @@ require_relative "dependencies"
 
 class App < Sinatra::Base
 
-  post "/create_employee" do
+  post "/employees" do
     text = request.body.read
     employee_info = JSON.parse(text)
     content_type("application/json")

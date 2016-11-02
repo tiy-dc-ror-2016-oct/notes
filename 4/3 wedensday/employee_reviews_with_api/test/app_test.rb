@@ -14,10 +14,18 @@ class AppTest < Minitest::Test
   end
 
   def test_can_create_employee
-    request_body = {name: "Ben", email: "bmangelsen@gmail.com", phone: "555-555-5555", salary: 50000}.to_json
-    new_employee = post("/create_employee", request_body)
-    assert new_employee.ok?
-    assert_equal Employee.last.id, JSON.parse(new_employee.body)["id"]
+    header "content_type", "application/json"
+
+    payload = {
+      name: "Ben",
+      email: "bmangelsen@gmail.com",
+      phone: "555-555-5555",
+      salary: 50000
+    }
+
+    post "/employees", payload.to_json
+    assert last_response.ok?
+    assert_equal Employee.last.id, JSON.parse(last_response.body)["id"]
     assert_equal "Ben", Employee.last.name
   end
 

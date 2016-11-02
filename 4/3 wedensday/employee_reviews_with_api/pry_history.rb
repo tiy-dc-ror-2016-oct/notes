@@ -10,3 +10,6 @@ new_employee.body
 a = _
 JSON.parse(a)
 exit
+request
+params
+exit
