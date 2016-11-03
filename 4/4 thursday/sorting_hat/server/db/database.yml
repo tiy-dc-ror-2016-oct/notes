@@ -1,0 +1,25 @@
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+
+# postgres_defaults: &postgres_defaults
+#   encoding: utf8
+#   template: template0
+#   host: localhost
+#   adapter: postgresql
+
+# development:
+#   <<: *postgres_defaults
+#   database: db_name
+#   username: <%= ENV["USER"] %>
+#   password: iamthedefaultpassword
+
+# test:
+#   <<: *postgres_defaults
+#   database: db_name_test
+#   username: <%= ENV["USER"] %>
+#   password: iamthedefaultpassword
