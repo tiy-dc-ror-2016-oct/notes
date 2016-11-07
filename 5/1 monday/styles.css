@@ -1,0 +1,37 @@
+li{
+    background-color: purple;
+    padding: 10px;
+    margin: 10px;
+
+}
+#homepage p, #homepage a {
+  font-size: 22px;
+}
+
+#home-btn {
+  margin: 20px;
+  color: #333333;
+}
+
+#homepage p.first-paragraph {
+  border: 1px solid black;
+}
+
+article {
+  background-color: red;
+}
+
+article p{
+  margin: 0;
+  padding: 0;
+  width: 33.1%;
+  float: left;
+}
+
+#homepage:hover {
+  color: blue;
+}
+
+#homepage>span {
+  font-family: "Wingdings";
+}

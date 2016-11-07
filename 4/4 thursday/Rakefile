@@ -1,0 +1,27 @@
+require_relative 'sinatra'
+
+task :test do
+ Dir.glob("test/*_test.rb") { |file|  require(File.expand_path(file)) }
+end
+
+task :say do
+  `say hi`
+end
+
+task :say do
+  `say bye`
+end
+
+
+namespace :db do
+  task :migrate do
+    require './create_users_table_migration'
+    CreateUsersTableMigration.migrate(:up)
+  end
+
+  task :reset do
+    require './create_users_table_migration'
+    CreateUsersTableMigration.migrate(:down)
+    CreateUsersTableMigration.migrate(:up)
+  end
+end

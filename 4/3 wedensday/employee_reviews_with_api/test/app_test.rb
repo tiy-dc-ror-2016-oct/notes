@@ -27,6 +27,7 @@ class AppTest < Minitest::Test
     }
 
     post "/employees", payload.to_json
+
     assert_equal 201, last_response.status
     assert_equal Employee.last.id, JSON.parse(last_response.body)["id"]
     assert_equal "Ben", Employee.last.name
