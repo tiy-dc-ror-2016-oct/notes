@@ -2,27 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hains Point Race</title>
-    <link rel="stylesheet" href="styles.css" media="screen">
+    <title>Predications By Duck</title>
+    <link rel="stylesheet" href="/styles.css" media="screen">
   </head>
   <body>
-    <h1>Welcome to the Race</h1>
+    <h1>Predications By Duck</h1>
     <main>
       <article class="">
-        <%= @number %>
+        Please enter your zip for the latest weather!
+        <br>
 
-        <% 10.times do %>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        <% end %>
+        <form action="/weather/for" method="post">
+          <label for="">Zip</label>
+          <input type="text" name="zip">
+          <input type="submit" name="commit" value="Get Weather">
+        </form>
+
+        <hr>
+        or
+        <form action="/weather/for/city" method="post">
+          <label for="">City</label>
+          <input type="text" name="city">
+          <label for="">State</label>
+          <input type="text" name="state">
+          <input type="submit" name="commit" value="Get Weather">
+        </form>
+
       </article>
 
       <aside class="">
         <ul>
-          <li>Race Dates</li>
-          <li>Course</li>
-          <li>Register</li>
+          <li>Alerts</li>
         </ul>
       </aside>
 

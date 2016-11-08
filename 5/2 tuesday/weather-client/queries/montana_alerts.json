@@ -1,0 +1,40 @@
+{
+  "response": {
+    "version": "0.1",
+    "termsofService": "http://www.wunderground.com/weather/api/d/terms.html",
+    "features": {
+      "alerts": 1
+    }
+  },
+  "query_zone": "016",
+  "alerts": [
+    {
+      "type": "WND",
+      "description": "Lake Wind Advisory",
+      "date": "2:53 am MDT on October 31, 2016",
+      "date_epoch": "1477903980",
+      "expires": "6:00 PM MDT on October 31, 2016",
+      "expires_epoch": "1477958400",
+      "tz_short": "MDT",
+      "tz_long": "America/Denver",
+      "message": "\n...Lake Wind Advisory in effect from 9 am this morning to 6 PM\nMDT this evening for Fort Peck Lake...\n\nThe National Weather Service in Glasgow has issued a lake Wind\nAdvisory for Fort Peck Lake...which is in effect from 9 am this\nmorning to 6 PM MDT this evening.\n\n* Winds...west to northwest 15 to 25 mph with gusts up to 40 mph.\n\n* Timing...9 am this morning through 6 PM this evening.\n\n* Impacts...these winds will make open waters of the lake rough\n and hazardous...and may result in high waves which may tip or\n swamp smaller craft.\n\nPrecautionary/preparedness actions...\n\nBoaters should use extreme caution if venturing onto Fort Peck\nLake. For your personal safety...avoid the open waters. Stay\nclose to shore or around protected areas.\n\n\n\n\n\n",
+      "phenomena": "LW",
+      "significance": "Y",
+      "ZONES": [
+        {
+          "state": "MT",
+          "ZONE": "016"
+        },
+        {
+          "state": "MT",
+          "ZONE": "017"
+        },
+        {
+          "state": "MT",
+          "ZONE": "021"
+        }
+      ],
+      "StormBased": {}
+    }
+  ]
+}

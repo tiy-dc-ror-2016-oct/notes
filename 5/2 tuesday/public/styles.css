@@ -28,7 +28,7 @@ main aside {
   float: left;
 }
 
-.clearfix {
+main aside:last-child {
   clear: both;
 }
 

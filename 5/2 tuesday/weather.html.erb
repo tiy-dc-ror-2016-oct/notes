@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Predications By Duck</title>
+    <link rel="stylesheet" href="/styles.css" media="screen">
+  </head>
+  <body>
+    <h1>Predications By Duck</h1>
+    <main>
+      <article class="">
+
+        <h3>Ten day forecast:</h3>
+        <ul>
+          <% @weather['forecast']['txt_forecast']['forecastday'].each do |el| %>
+            <li><%= el['title'] %> : <%= el['fcttext'] %></li>
+          <% end %>
+        </ul>
+
+      </article>
+
+      <aside class="">
+        <ul>
+          <li>Alerts</li>
+        </ul>
+      </aside>
+
+      <div class="clearfix"></div>
+
+      <footer>
+        This page was made in <%= Time.now.strftime("%B") %>
+      </footer>
+    </main>
+
+  </body>
+</html>
