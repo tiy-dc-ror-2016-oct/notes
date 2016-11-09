@@ -1,0 +1,12 @@
+<ul>
+  <% @animal.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+</ul>
+
+<form action="/animals" method="post">
+  <input type="text" name="name" value="<%= @animal.name %>">
+  <input type="date" name="born_on" value="<%= @animal.born_on %>">
+  <input type="text" name="species" value="<%= @animal.species %>">
+  <input type="submit" value="Save">
+</form>

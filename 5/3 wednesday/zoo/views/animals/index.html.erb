@@ -1,0 +1,42 @@
+<table>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Birthday
+    </th>
+    <th>
+      Kind
+    </th>
+  </tr>
+  <% @animals.each do |animal| %>
+    <tr>
+      <td>
+        <%= animal.name %>
+      </td>
+      <td>
+        <%= animal.born_on %>
+      </td>
+      <td>
+        <%= animal.species %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<form action="/animals" method="post">
+  <input type="text" name="name" value="">
+  <input type="date" name="born_on" value="">
+  <input type="text" name="species" value="">
+  <input type="submit" value="Save">
+</form>
