@@ -36,7 +36,7 @@ end
 
 patch "/animals/:id" do
   @animal = Animal.find(params["id"])
-  @animal.update(params)
+  @animal.update(params["animal"])
   redirect "/animals"
 end
 
