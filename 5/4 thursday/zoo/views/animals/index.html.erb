@@ -15,7 +15,7 @@
   <% @animals.each do |animal| %>
     <tr>
       <td>
-        <%= animal.name %>
+        <a href="/animals/<%= animal.id %>"><%= animal.name %></a>
       </td>
       <td>
         <%= animal.born_on %>

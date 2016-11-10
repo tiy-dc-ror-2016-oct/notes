@@ -22,3 +22,6 @@ params
 @animal.attributes.keys
 @animal.attributes.keys & params.keys
 exit
+require './db/migrations/create_drugs_table'
+CreateDrugsTable.migrate(:up)
+exit
