@@ -23,6 +23,12 @@
       <td>
         <%= animal.species %>
       </td>
+      <td>
+        <form action="/animals/<%= animal.id %>" method="POST">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
+      </td>
     </tr>
   <% end %>
 </table>

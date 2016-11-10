@@ -1,6 +1,8 @@
 require "sinatra"
 require "./db/connection"
 
+set :method_override, true
+
 # Homepage
 get "/" do
   erb :"home/index.html", layout: :"layout/application.html"
@@ -25,4 +27,9 @@ end
 get "/animals/new" do
   @animal = Animal.new
   erb :"animals/new.html", layout: :"layout/application.html"
+end
+
+delete "/animals/:id" do
+  Animal.find(params["id"]).destroy
+  redirect "/animals"
 end
