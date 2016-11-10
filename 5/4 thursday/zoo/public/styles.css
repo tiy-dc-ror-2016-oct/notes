@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("weather.png");
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
+  width: 700px;
+  margin: auto;
+}
+
+main article {
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  padding: 5px 30px;
+  width: 70%;
+  float: left;
+}
+
+main aside {
+  width: 30%;
+  float: left;
+}
+
+main aside:last-child {
+  clear: both;
+}
+
+footer{
+  clear: both;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+table {
+  width: 100%;
+
+}
