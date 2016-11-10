@@ -29,6 +29,17 @@ get "/animals/new" do
   erb :"animals/new.html", layout: :"layout/application.html"
 end
 
+get "/animals/:id/edit" do
+  @animal = Animal.find(params["id"])
+  erb :"animals/edit.html", layout: :"layout/application.html"
+end
+
+patch "/animals/:id" do
+  @animal = Animal.find(params["id"])
+  @animal.update(params)
+  redirect "/animals"
+end
+
 delete "/animals/:id" do
   Animal.find(params["id"]).destroy
   redirect "/animals"

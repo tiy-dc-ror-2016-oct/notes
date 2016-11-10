@@ -15,3 +15,10 @@ _.save
 params
 exit
 exit
+param
+params
+@animal.attributes
+@animal.attributes & params
+@animal.attributes.keys
+@animal.attributes.keys & params.keys
+exit
