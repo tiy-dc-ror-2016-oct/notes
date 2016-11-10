@@ -45,3 +45,22 @@ table {
   width: 100%;
 
 }
+
+input[type="submit"] {
+  background-color: #4ca74c;
+  border-radius: 10px;
+  border: #68863b solid 1px;
+  color: white;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #3d843d;
+  border: #68863b solid 1px;
+}
+
+form input{
+  display: block;
+  margin-bottom: 20px;
+}

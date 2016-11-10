@@ -4,9 +4,18 @@
   <% end %>
 </ul>
 
+<h2>Add a New Animal</h2>
+
 <form action="/animals" method="post">
-  <input type="text" name="name" value="<%= @animal.name %>">
-  <input type="date" name="born_on" value="<%= @animal.born_on %>">
-  <input type="text" name="species" value="<%= @animal.species %>">
+
+  <label for="animal_name">Name</label>
+  <input id="animal_name" type="text" name="name" value="<%= @animal.name %>">
+
+  <label for="animal_born_on">Birfhday</label>
+  <input id="animal_born_on" type="date" name="born_on" value="<%= @animal.born_on %>">
+
+  <label for="animal_species">Species</label>
+  <input id="animal_species" type="text" name="species" value="<%= @animal.species %>">
+
   <input type="submit" value="Save">
 </form>
