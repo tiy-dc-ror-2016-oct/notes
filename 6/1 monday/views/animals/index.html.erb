@@ -1,0 +1,42 @@
+<a href="/animals/new" class='btn btn-success'>+ New Animal</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Birthday
+      </th>
+      <th colspan="2">
+        Kind
+      </th>
+    </tr>
+  </thead>
+  <% @animals.each do |animal| %>
+    <tr>
+      <td>
+        <a href="/animals/<%= animal.id %>"><%= animal.name %></a>
+      </td>
+      <td>
+        <%= animal.born_on %>
+      </td>
+      <td>
+        <%= animal.species %>
+      </td>
+      <td>
+        <div class="btn-toolbar">
+
+          <a class='btn btn-default btn-xs' href="/animals/<%= animal.id %>/edit">Edit</a>
+
+
+          <form action="/animals/<%= animal.id %>" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <input class='btn btn-danger btn-xs' type="submit" value="Delete">
+          </form>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+</table>
