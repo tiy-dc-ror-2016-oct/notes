@@ -1,0 +1,19 @@
+<ul>
+  <% @drug.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+</ul>
+
+<h2>Add a Drug to <%= @animal.name %></h2>
+
+<form action="/drugs" method="post">
+
+  <label for="drug_name">Name</label>
+  <input id="drug_name" type="text" name="drug[name]" value="<%= @drug.name %>">
+  <input id="drug_animal_id" type="hidden" name="drug[animal_id]" value="<%= @drug.animal_id %>">
+
+  <label for="drug_administered_at">Given</label>
+  <input id="drug_administered_at" type="text" name="drug[administered_at]" value="<%= @drug.administered_at %>">
+
+  <input type="submit" value="Save">
+</form>

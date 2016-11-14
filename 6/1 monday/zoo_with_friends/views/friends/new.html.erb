@@ -1,0 +1,24 @@
+<ul>
+  <% @friend.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+</ul>
+
+<h2>Add a Friendship for <%= @animal.name %></h2>
+
+<form action="/friends" method="post">
+  <input id="friend_outgoing_animal_id" type="hidden" name="friend[outgoing_animal_id]" value="<%= @friend.outgoing_animal_id %>">
+
+  <% Animal.all.each do |animal| %>
+  <div class="checkbox">
+
+
+    <label for="shy_animal_<%= animal.id %>">
+      <input id="shy_animal_<%= animal.id %>" type="checkbox" name="friend[shy_animal_ids][]" value="<%= animal.id %>">
+      <%= animal.name %>
+    </label>
+  </div>
+  <% end  %>
+
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>

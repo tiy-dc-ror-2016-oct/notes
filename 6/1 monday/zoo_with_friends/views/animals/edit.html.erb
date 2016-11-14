@@ -1,0 +1,13 @@
+<ul>
+  <% @animal.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+</ul>
+
+<h2>Edit Animal</h2>
+
+<form action="/animals/<%= @animal.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <%= erb :"animals/_form.html" %>
+</form>

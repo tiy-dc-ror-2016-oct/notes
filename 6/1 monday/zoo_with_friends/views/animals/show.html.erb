@@ -1,0 +1,28 @@
+<a class="btn btn-success" href="/animals/<%= @animal.id %>/drugs/new">Add Drug</a>
+<a class="btn btn-success" href="/animals/<%= @animal.id %>/friends/new">Add Friend</a>
+
+<h2><%= @animal.name %></h2>
+<ul>
+  <li><%= @animal.born_on %></li>
+  <li><%= @animal.species %></li>
+</ul>
+
+<hr>
+
+<h3>Drugs</h3>
+<ul>
+  <% @animal.drugs.each do |drug| %>
+    <li>
+      <strong>Name:</strong>
+      <%= drug.name %>
+
+      <% if drug.administered_at %>
+        <strong>Given:</strong>
+        <%= drug.administered_at %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<hr>
+
+<img src="http://placekitten.com/350/250" alt="" width="100%" />
