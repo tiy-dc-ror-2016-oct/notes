@@ -1,11 +1,27 @@
 <h1>New Blargh Post</h1>
-<form action="/micro_posts" method="post">
-  <label for="title">title</label>
-  <input type="text" name="micro_post[title]" value="">
-  <label for="content">content</label>
-  <input type="text" name="micro_post[content]" value="">
-  <label for="author_id">author_id</label>
-  <input type="text" name="micro_post[author_id]" value="">
-  <label for="name">name</label>
-  <input type="submit" name="name" value="Save">
-</form>
+
+<% @micro_post.errors.full_messages.each do |error| %>
+  <%= error %>
+<% end %>
+
+<p>
+  <%= my_secret_route_two_url("i-go-where-:thing-was") %>
+</p>
+<p>
+  <%= my_secret_route_two_path("i-go-where-:thing-was") %>
+</p>
+
+<%= form_tag micro_posts_path do %>
+  <%= label_tag "micro_post[title]", "Title" %>
+  <%= text_field_tag "micro_post[title]", @micro_post.title %>
+
+
+  <%= label_tag "micro_post[content]", "Content" %>
+  <%= text_field_tag "micro_post[content]", @micro_post.content,  class: 'form-control' %>
+
+
+  <%= label_tag "micro_post[author_id]", "Author" %>
+  <%= text_field_tag "micro_post[author_id]", @micro_post.author_id %>
+
+  <%= submit_tag %>
+<% end %>
