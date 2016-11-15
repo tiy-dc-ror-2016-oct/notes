@@ -9,3 +9,8 @@ params[:github_login]
 params['github_login']
 params[:github_login]
 exit
+params
+exit
+params
+exit
+params

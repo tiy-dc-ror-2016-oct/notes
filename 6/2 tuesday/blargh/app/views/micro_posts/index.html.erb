@@ -1,6 +1,9 @@
-<h1>MicroPosts#index</h1>
-<p>Find me in app/views/micro_posts/index.html.erb</p>
+<h1>Welcome to my Blargh</h1>
 
-<h4>Author info</h4>
-<%= @github_user["login"] %>
-<img src="<%= @github_user["avatar_url"] %>" alt="" width="200" />
+<a href="/micro_posts/new">New Blargh</a>
+<% @micro_posts.each do |micro_post| %>
+    <h2><%= micro_post.title %></h2>
+    <p>
+      <%= micro_post.content %>
+    </p>
+<% end %>
