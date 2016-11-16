@@ -1,0 +1,10 @@
+<h1>Welcome to my Blargh</h1>
+
+<%= link_to "New Blargh", micro_posts_new_path(per_page: 10, page: 2) %>
+
+<% @micro_posts.each do |micro_post| %>
+    <h2><%= micro_post.title %></h2>
+    <p>
+      <%= micro_post.content %>
+    </p>
+<% end %>
