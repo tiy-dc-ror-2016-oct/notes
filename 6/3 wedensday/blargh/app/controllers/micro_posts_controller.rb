@@ -18,7 +18,36 @@ class MicroPostsController < ApplicationController
     end
   end
 
+  def edit
+    @micro_post = MicroPost.find(params["id"])
+  end
+
+  def update
+    @micro_post = MicroPost.find(params["id"])
+    if @micro_post.update(micro_post_params)
+      redirect micro_posts_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @micro_post = MicroPost.find(params["id"])
+    @micro_post.destroy
+    redirect_to micro_posts_path
+  end
+
+
+
+
+  def download
+    @micro_post = MicroPost.find(params["id"])
+
+    render json: @micro_post
+  end
+
+
   def micro_post_params
-    params.require(:micro_post).permit(:title, :content, :author_id)
+    params.require(:micro_post).permit(:title, :content, :user_id)
   end
 end

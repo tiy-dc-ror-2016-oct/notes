@@ -12,7 +12,7 @@ class MicroPostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can create a micro_post" do
-    post "/micro_posts", params: { micro_post: {title: "Tale of Two Cities"} }
+    post "/micro_posts", params: { micro_post: {title: "Tale of Two Cities", user_id: users(:jane_doe).id} }
     assert_response :redirect
 
     assert_equal MicroPost.last.title, "Tale of Two Cities"
