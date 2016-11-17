@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   # get 'micro_posts' => "micro_posts#index"
   resources :micro_posts, except: [:show] do
     member do
@@ -9,5 +11,10 @@ Rails.application.routes.draw do
       post :search
     end
   end
+
+  resources :users, only: [:new, :create]
+  resource :session, only: [:new, :create, :destroy]
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

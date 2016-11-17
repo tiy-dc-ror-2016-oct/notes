@@ -42,3 +42,19 @@ exit
 @micro_post.errors
 @micro_post.errorsexit
 exit
+require 'bcrypt'
+my_password = BCrypt::Password.create("my password")
+BCrypt::Password.new("$2a$10$GELgxgPlpTlnqMjxEQ4OyO9zG8.VobAYpVS038u2cJmvebOk5k9Ge")
+a = _ 
+a.class
+ls a
+ls a.cost
+a.cost
+a.checksum
+a == ""
+a == "my password"
+a == "my passworD"
+a.methos
+a.methods
+ls a
+exit!

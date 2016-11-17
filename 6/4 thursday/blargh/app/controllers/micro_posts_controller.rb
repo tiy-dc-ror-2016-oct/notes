@@ -5,7 +5,7 @@ class MicroPostsController < ApplicationController
   end
 
   def new
-    @micro_post = MicroPost.new
+    @micro_post = MicroPost.new(user_id: current_user.id)
   end
 
   def create
