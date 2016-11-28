@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+jane_doe:
+  email: jane@theironyard.com
+  full_name: Jane Doe
+
+russell_o:
+  email: russellsotheremail@coolperson.com
+  full_name: Russell O

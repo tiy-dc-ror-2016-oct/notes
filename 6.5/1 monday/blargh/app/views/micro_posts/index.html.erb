@@ -1,0 +1,23 @@
+<h1>Welcome to my Blargh</h1>
+
+<%= link_to "New Blargh", new_micro_post_path %>
+
+<% @micro_posts.each do |micro_post| %>
+    <h4>
+      <%= micro_post.id %>:
+      <%= micro_post.title %>
+      <small><%= micro_post.user.full_name %></small>
+      <%= link_to "Edit Post", edit_micro_post_path(micro_post.id) %>
+      <%= link_to "Delete Post", micro_post_path(micro_post.id), method: :delete %>
+    </h4>
+    <p>
+      <%= micro_post.content %>
+    </p>
+<% end %>
+
+
+<pre>
+  <code>
+    <%= current_user.email if current_user %>
+  </code>
+</pre>

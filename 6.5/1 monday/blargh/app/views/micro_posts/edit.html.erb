@@ -1,0 +1,21 @@
+<h1>New Blargh Post</h1>
+
+<% @micro_post.errors.full_messages.each do |error| %>
+  <%= error %>
+  <%= binding.pry %>
+<% end %>
+
+<%= form_for @micro_post do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content,  class: 'form-control' %>
+
+  <%= f.label :user_id %>
+  <%= f.text_field :user_id,  class: 'form-control' %>
+
+  <%= f.submit class: "btn btn-primary"%>
+
+<% end %>
