@@ -1,0 +1,25 @@
+<h1>Login!</h1>
+
+<% if @message %>
+  <div class="alert alert-danger">
+    <%= @message %>
+  </div>
+<% end %>
+
+<%= form_tag session_path do  %>
+
+  <%= label_tag :email %>
+  <%= email_field_tag :email, nil, class: 'form-control' %>
+
+  <%= label_tag :password %>
+  <%= text_field_tag :password, nil, class: 'form-control' %>
+  <br>
+  <%= submit_tag nil, class: 'btn btn-primary' %>
+
+<% end %>
+
+<br>
+
+<p>
+  <%= link_to "Welcome Page", root_path %>
+</p>

@@ -1,0 +1,19 @@
+<h1>New Comment for </h1>
+
+<%= link_to "Home Page", contents_path %>
+
+<% @comment.errors.full_messages.each do |error| %>
+  <%= error %>
+<% end %>
+
+<%= form_for ([@content, @comment]) do |f| %>
+
+  <%= f.label :user_comment %>
+  <%= f.text_field :user_comment,  class: 'form-control' %>
+
+  <%= f.hidden_field :user_id,  class: 'form-control' %>
+  <%= f.hidden_field :content_id,  class: 'form-control' %>
+
+  <%= f.submit class: "btn btn-primary"%>
+
+<% end %>

@@ -1,0 +1,68 @@
+<h1>Forgeddit</h1>
+<h2>An original concept</h2>
+
+<%= link_to "Add New Content to Forgeddit", new_content_path %>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>User</th>
+      <th>Comments</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contents.each do |content| %>
+      <tr>
+        <td><%= link_to content.title, content.label_type %></td>
+        <td><%= content.label_type %></td>
+        <td><%= content.description %></td>
+        <td><%= content.user.full_name %></td>
+        <td><%= content.comments.count %></td>
+        <td><%= Date.today %></td>
+        <td>
+          <%= link_to "Comments", content_comments_path(content.id), class: "btn btn-info btn-xs" %>
+          <%= link_to "Add a Comment", new_content_comment_path(content.id), class: "btn btn-success btn-xs" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<% @contents.each do |content| %>
+<div class="row content">
+    <div class="col-md-4">
+        <%= link_to content.title, content.label_type %>
+    </div>
+    <div class="col-md-3">
+      <%= content.label_type %>
+      <%= content.description %>
+      <%= content.user.full_name %>
+    </div>
+    <div class="col-md-1">
+      <%= content.comments.count %>
+    </div>
+    <div class="col-md-4">
+      <div class="btn-toolbar">
+        <%= link_to "Comments", content_comments_path(content.id), class: "btn btn-info btn-xs" %>
+        <%= link_to new_content_comment_path(content.id), class: "btn btn-success btn-xs" do %>
+          <i class="glyphicon glyphicon-plus"></i>
+          New Comment
+        <% end %>
+
+          <%= link_to '<i class="glyphicon glyphicon-comment"></i>'.html_safe + " Comments", content_comments_path(content.id), class: "btn btn-info btn-xs" %>
+
+      </div>
+
+    </div>
+
+</div>
+<% end %>
+
+<br>
+<p>Find me in app/views/contents/index.html.erb</p>

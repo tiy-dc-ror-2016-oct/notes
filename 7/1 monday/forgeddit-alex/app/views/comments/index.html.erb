@@ -1,0 +1,16 @@
+<h2>Comments for: </h2>
+<h2>An original concept</h2>
+
+<%= link_to "Home Page", contents_path %>
+
+<% @comments.each do |comment| %>
+  <h4>
+    <%= comment.user.full_name %>
+  </h4>
+  <p>
+    <%= comment.created_at%>
+  </p>
+  <p>
+    <%= comment.user_comment %>
+  </p>
+<% end %>

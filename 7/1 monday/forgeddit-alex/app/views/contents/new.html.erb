@@ -1,0 +1,24 @@
+<h1 class="title">New Content Input</h1>
+
+<%= link_to "Home Page", contents_path %>
+
+<% @content.errors.full_messages.each do |error| %>
+  <%= error %>
+<% end %>
+
+<%= form_for @content do |f| %>
+  <h1>I am other content</h1>
+  <%= f.label :title %>
+  <%= f.text_field :title,  class: 'form-control' %>
+
+  <%= f.label "Enter url link" %>
+  <%= f.url_field :label_type,  class: 'form-control' %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description,  class: 'form-control' %>
+
+  <%= f.hidden_field :user_id,  class: 'form-control' %>
+
+  <%= f.submit class: "btn btn-primary"%>
+
+<% end %>
