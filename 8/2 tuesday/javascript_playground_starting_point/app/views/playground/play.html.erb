@@ -1,0 +1,40 @@
+<h1>Javascript Playground</h1>
+
+<ul>
+  <li class="list-element">HHHHHHH</li>
+  <li class="list-element">HHHHHHH</li>
+</ul>
+
+<div>
+  <h3>The Name</h3>
+  Your Name:
+  <%= text_field_tag :name, nil, id: "name_field" %>
+  <%= link_to "Add Default", "#", id: "name_link"%>
+</div>
+
+<div>
+  <h3>Regarding the hidden section</h3>
+  Show Next Section?
+  <%= radio_button_tag :show, true, nil %> Yes
+  <%= radio_button_tag :show, false, nil %> No
+</div>
+
+<div id="show_hide_section">
+  <h3>The hidden section</h3>
+  <p>I'm being shown!</p>
+</div>
+
+<div id="copy_section">
+  <div class="copyable">
+    <%= form_tag "/posts", method: :post, class: "navbar-form navbar-left search-form" do %>
+      <%= text_field_tag(
+          :search,
+          params[:search],
+          placeholder: "Search",
+          class: "form-control"
+      ) %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "Copy it!", "#", id: "copy_link" %>
